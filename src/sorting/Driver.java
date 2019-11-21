@@ -16,6 +16,11 @@ public class Driver {
 		int[] setSorted = SelectionSort.selectionSort(arr);
 		System.out.println("Sorted Array After Selection sort=");
 		Arrays.stream(setSorted).forEach(System.out::println);
+		
+		//merge sort
+		int[] mergeSorted = MergeSort.mergeSort(arr);
+		System.out.println("Sorted Array After Merge sort=O(nlogn)");
+		Arrays.stream(mergeSorted).forEach(System.out::println);
 	}
 
 }
