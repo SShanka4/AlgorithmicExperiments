@@ -7,5 +7,4 @@ public class SinglyNode {
 	public SinglyNode(int data) {
 		this.data = data;
 	}
-
 }

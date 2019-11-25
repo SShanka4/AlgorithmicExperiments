@@ -1,6 +1,7 @@
 package linkedlist;
 
 //class to insert data into a linked list
+//Time Complexity: O(1)
 public class InsertNode {
 
 	public static void main(String[] args) {
@@ -10,17 +11,17 @@ public class InsertNode {
 		
 		//insert at the last
 		SinglyNode startAfterInsertion = insertSinglyNodeAtLast(head,6);
-		printSinglyLinkedList(startAfterInsertion);
-		printSinglyLinkedList(head); //here head will also change as something is inserted at the end of last memory pointer
+		PrintSinglyNode.printSinglyLinkedList(startAfterInsertion);
+		PrintSinglyNode.printSinglyLinkedList(head); //here head will also change as something is inserted at the end of last memory pointer
 		
 		//insert at the beginning
 		SinglyNode headAfterInsertionAtBegin= insertSinglyNodeAtBegin(head,2);
-		printSinglyLinkedList(headAfterInsertionAtBegin);
-		printSinglyLinkedList(head); //here head will not change as head start will be at the start element before insertion and pass by value concept
+		PrintSinglyNode.printSinglyLinkedList(headAfterInsertionAtBegin);
+		PrintSinglyNode.printSinglyLinkedList(head); //here head will not change as head start will be at the start element before insertion and pass by value concept
 		  
 		//insert at the middle SinglyNode headAfterInsertionAtMiddle=
 		SinglyNode headAfterInsertionAtMiddle = insertSinglyNodeAtMiddle(head,8);
-		printSinglyLinkedList(headAfterInsertionAtMiddle);
+		PrintSinglyNode.printSinglyLinkedList(headAfterInsertionAtMiddle);
 		 
 	}
 
@@ -29,7 +30,6 @@ public class InsertNode {
 		int length = calculateLength(head);
 		int mid = (length/2)+1;	
 		System.out.println("mid is="+mid);
-		//printSinglyLinkedList(head);
 		SinglyNode prev = head;
 		int pointer = 0;
 		while(pointer!=(mid-1)) { //3 4 5 6 7 
@@ -58,15 +58,7 @@ public class InsertNode {
 		return head;
 	}
 
-	private static void printSinglyLinkedList(SinglyNode startAfterInsertion) {
-		System.out.println("\n\n");
-		while(startAfterInsertion!=null) {
-			System.out.println(startAfterInsertion.data);
-			startAfterInsertion = startAfterInsertion.next;
-		}
-	}
-
-	private static SinglyNode insertSinglyNodeAtLast(SinglyNode head,int data) {
+	public static SinglyNode insertSinglyNodeAtLast(SinglyNode head,int data) {
 		SinglyNode append = new SinglyNode(data);
 		append.next = null;
 		if(head==null) {
